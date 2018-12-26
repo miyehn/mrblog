@@ -44,10 +44,3 @@ export var Friends = function() {return(
 )}
 
 export var password = "23333";
-
-export var playlist = [
-    {
-        "info": "Reclaim - Ólafur Arnalds",
-        "url": "https://miyehn.me/music/(06)Reclaim_olafur_arnalds.mp3"
-    }
-];
