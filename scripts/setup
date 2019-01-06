@@ -28,7 +28,7 @@ else:
 
     file.write('\n#_begin_mrblog_setup\n')
     # TODO: allow custom md editor (currently uses Typora)
-    file.write('export MRBLOG_EDITOR="\"/mnt/c/Program Files/Typora/Typora.exe\"')
+    file.write('export MRBLOG_EDITOR="/mnt/c/Program Files/Typora/Typora.exe"\n')
     file.write('export MRBLOG_DOMAIN="'+domain+'"\n')
     file.write('export MRBLOG_CONTENT="'+content_dir+'"\n')
     file.write('export MRBLOG_SCRIPTS="'+scripts_dir+'"\n')
