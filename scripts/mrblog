@@ -17,7 +17,4 @@ elif sys.argv[1]=='new':
 elif sys.argv[1]=='publish':
     os.system(scripts_dir + '/publish')
 elif sys.argv[1]=='pic':
-    if argc>=3:
-        os.system(scripts_dir + '/post_pic ' + sys.argv[2])
-    else:
-        print('give another argument (image path)')
+    os.system(scripts_dir + '/post_pic ')
