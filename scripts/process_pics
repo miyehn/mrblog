@@ -7,7 +7,6 @@ content_dir = os.environ['MRBLOG_CONTENT']
 paths = glob.glob(content_dir + '/pics/*.jpg')
 morepaths = glob.glob(content_dir + '/pics/*.png')
 paths.extend(morepaths)
-
 for path in paths:
     info = os.popen('magick identify -format "%w %h" '+path).read()
     wh = info.split(' ')
