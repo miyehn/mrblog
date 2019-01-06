@@ -16,4 +16,4 @@ echo "public: " >> $filename
 echo "" >> $filename
 echo "---" >> $filename
 
-open $filename
+"$MRBLOG_EDITOR" $filename
