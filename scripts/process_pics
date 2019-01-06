@@ -2,7 +2,6 @@
 
 import glob
 import os
-from PIL import Image
 
 content_dir = os.environ['MRBLOG_CONTENT']
 paths = glob.glob(content_dir + '/pics/*.jpg')
@@ -10,8 +9,10 @@ morepaths = glob.glob(content_dir + '/pics/*.png')
 paths.extend(morepaths)
 
 for path in paths:
-    img = Image.open(path)
-    w, h = img.size
+    info = os.popen('magick identify -format "%w %h" '+path).read()
+    wh = info.split(' ')
+    w = int(wh[0])
+    h = int(wh[1])
     if (w>800 or h>600):
         cmd='magick "'+path+'" -resize "800x600>" "'+path+'"'
         os.system(cmd)
