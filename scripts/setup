@@ -64,10 +64,5 @@ else:
         if need_gitignore:
             gitignore.write('\nmrblog-content/drafts\nmrblog-content/localSummary')
 
-    # edit .gitignore for this repo
-    filepath = scripts_dir + '/../.gitignore'
-    with open (filepath, 'w') as gitignore:
-        gitignore.write('*')
-
     print('done with local setup!')
     print('next run "source ~/.bash_profile" to apply the changes')
