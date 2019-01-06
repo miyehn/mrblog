@@ -16,4 +16,6 @@ echo "public: " >> $filename
 echo "" >> $filename
 echo "---" >> $filename
 
-"$MRBLOG_EDITOR" $filename
+rel="$(echo $filename | cut -c7-)"
+
+"$MRBLOG_EDITOR" $rel
