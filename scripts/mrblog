@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import os
+import shutil
 
 argc = len(sys.argv)
 scripts_dir = os.environ['MRBLOG_SCRIPTS']
@@ -9,15 +10,13 @@ scripts_dir = os.environ['MRBLOG_SCRIPTS']
 if argc==1:
     print('-------- Welcome to mrblog! --------')
     print('Currently configured for domain: '+os.environ['MRBLOG_DOMAIN'])
-    with open(scripts_dir + '/usage', 'r') as file:
-        print file.read()
+    with open(scripts_dir + '/usage', 'r') as f:
+        shutil.copyfileobj(f, sys.stdout)
+    print('')
 
 elif sys.argv[1]=='new':
     os.system(scripts_dir + '/new')
 elif sys.argv[1]=='publish':
     os.system(scripts_dir + '/publish')
 elif sys.argv[1]=='pic':
-    if argc>=3:
-        os.system(scripts_dir + '/post_pic ' + sys.argv[2])
-    else:
-        print('give another argument (image path)')
+    os.system(scripts_dir + '/post_pic '
