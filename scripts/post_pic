@@ -1,10 +1,12 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import glob
 import os
 import sys
 import time
+sys.path.append('/usr/local/lib/site-packages')
+sys.path.append('/usr/local/lib/dist-packages')
 import pyperclip
 
 content_dir = os.environ['MRBLOG_CONTENT']
