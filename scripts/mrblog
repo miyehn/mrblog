@@ -19,4 +19,4 @@ elif sys.argv[1]=='new':
 elif sys.argv[1]=='publish':
     os.system(scripts_dir + '/publish')
 elif sys.argv[1]=='pic':
-    os.system(scripts_dir + '/post_pic '
+    os.system(scripts_dir + '/post_pic ')
