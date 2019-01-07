@@ -10,4 +10,5 @@ Commands (can be called anywhere):
 Blog actions (need to be at blog site's directory):
     scripts/setup               : make local setups for blog
     npm run deploy              : deploy blog
+    scripts/update              : sync blog scripts from original repo
     scripts/delete              : delete the entire blog

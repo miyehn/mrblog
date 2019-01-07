@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+git fetch upstream win
+git checkout scripts
