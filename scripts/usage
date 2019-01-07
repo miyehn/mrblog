@@ -10,5 +10,5 @@ Commands (can be called anywhere):
 Blog actions (need to be at blog site's directory):
     scripts/setup               : make local setups for blog
     npm run deploy              : deploy blog
-    git pull upstream master    : download mrblog updates
+    git pull upstream win       : download mrblog updates
     scripts/delete              : delete the entire blog
