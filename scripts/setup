@@ -4,6 +4,9 @@ import os
 import json
 
 bash = os.environ['HOME'] + '/.bash_profile'
+if not os.path.isfile(bash):
+    os.system('touch '+bash)
+
 with open (bash) as f:
     lines = f.readlines()
 
