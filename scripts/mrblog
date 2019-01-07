@@ -12,6 +12,7 @@ if argc==1:
     print('Currently configured for domain: '+os.environ['MRBLOG_DOMAIN'])
     with open(scripts_dir + '/usage', 'r') as f:
         shutil.copyfileobj(f, sys.stdout)
+    print('')
 
 elif sys.argv[1]=='new':
     os.system(scripts_dir + '/new')
