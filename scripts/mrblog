@@ -2,6 +2,7 @@
 
 import sys
 import os
+import shutil
 
 argc = len(sys.argv)
 scripts_dir = os.environ['MRBLOG_SCRIPTS']
@@ -9,8 +10,8 @@ scripts_dir = os.environ['MRBLOG_SCRIPTS']
 if argc==1:
     print('-------- Welcome to mrblog! --------')
     print('Currently configured for domain: '+os.environ['MRBLOG_DOMAIN'])
-    with open(scripts_dir + '/usage', 'r') as file:
-        print file.read()
+    with open(scripts_dir + '/usage', 'r') as f:
+        shutil.copyfileobj(f, sys.stdout)
 
 elif sys.argv[1]=='new':
     os.system(scripts_dir + '/new')
