@@ -16,7 +16,7 @@ if len(sys.argv)<2:
     print('gimme an image as argument')
 else:
     img_path = sys.argv[1]
-    os.system('cp '+img_path+' '+content_dir+'/pics')
+    os.system('cp "'+img_path+'" '+content_dir+'/pics')
     name = os.path.splitext(os.path.basename(img_path))
     ts = str(int(time.time())) # timestamp
     src = content_dir+'/pics/'+name[0]+name[1]
