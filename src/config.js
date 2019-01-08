@@ -39,7 +39,7 @@ export var Intro = function(){return (
 export var Friends = function() {return(
     <div className="friends">
         <p>friends list↓</p>
-        <a className="light" href="https://www.dictionary.com/browse/nowhere">none</a><br/>
+        <a className="light" href="https://www.dictionary.com/browse/nowhere">none</a>
     </div>
 )}
 

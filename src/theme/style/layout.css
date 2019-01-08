@@ -57,6 +57,14 @@ html{
 	padding-top: var(--space-s);
 }
 
+.friends>a{
+	display: block;
+}
+
+.friends>p{
+	margin-bottom: calc(var(--base-line-height) - 1em);
+}
+
 @media(min-width: 768px) {
 	.content-all {
 		width: 750px;
