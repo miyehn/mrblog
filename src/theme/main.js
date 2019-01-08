@@ -9,7 +9,7 @@ import Amplitude from 'amplitudejs';
 import moment from 'moment';
 import './style/style.css';
 import { Intro, Friends, PostsPerPage, 
-  password, email, socialHandles, title} from './config.js';
+  password, email, socialHandles, title} from '../config.js';
 
 import {FaTumblrSquare as Tumblr} from 'react-icons/fa';
 import {FaWeibo as Weibo} from 'react-icons/fa';
@@ -371,10 +371,10 @@ class Avatar extends Component {
     this.pic = '';
     this.showpic = true;
     try {
-      this.pic = require('./avatar.png');
+      this.pic = require('../avatar.png');
     } catch (e) {
       try {
-        this.pic = require('./avatar.jpg');
+        this.pic = require('../avatar.jpg');
       } catch (e) {
         this.showpic = false;
       }
