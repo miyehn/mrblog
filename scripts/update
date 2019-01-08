@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git fetch upstream master
+git fetch upstream win
 git checkout FETCH_HEAD scripts
 git checkout FETCH_HEAD public
 git checkout FETCH_HEAD .env
