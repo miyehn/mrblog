@@ -2,6 +2,8 @@
 
 git fetch upstream master
 git checkout FETCH_HEAD scripts
-git checkout FETCH_HEAD src/main.js
+git checkout FETCH_HEAD public
+git checkout FETCH_HEAD .env
+git checkout FETCH_HEAD src/index.js
 
-echo "updated scripts folder and src/main.js"
+echo "updated to match original repo"
