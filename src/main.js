@@ -307,7 +307,9 @@ class AmplitudePlayer extends Component {
     } catch (e) {}
   }
 
-  render() { return (
+  render() { 
+    if (playlist.length == 0) return null;
+    else return (
     <div className="musicplayer hidden-xs hidden-sm">
       <span amplitude-song-info="info" amplitude-main-song-info="true"></span><br/>
       <progress 
