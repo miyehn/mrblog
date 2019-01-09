@@ -3,12 +3,15 @@
      or: <blog action>
 
 Commands (can be called anywhere):
-    new         : create a new post
-    publish     : publish posts
-    pic         : picture posting helper
+    new                     : create a new post using timestamp as filename
+    new <filename>          : create a new post using custom filename
+    find                    : find a specific post and edit / rename / delete it
+    publish                 : publish posts
+    pic                     : picture posting helper
 
-Blog actions (need to be at blog site's directory):
-    scripts/setup               : make local setups for blog
-    npm run deploy              : deploy blog
-    scripts/update              : sync blog scripts from original repo
-    scripts/delete              : delete the entire blog
+Blog actions (need to be at blog site's directory) 
+             (run "cd $MRBLOG_SCRIPTS/.." first):
+    scripts/setup           : make local setups for blog
+    npm run deploy          : deploy blog
+    scripts/update          : sync blog scripts from original repo
+    scripts/delete          : delete the entire blog

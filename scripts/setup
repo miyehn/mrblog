@@ -48,23 +48,5 @@ else:
     os.system('touch '+content_dir+'/tracklist')
     os.system('echo "[]" >> '+content_dir+'/tracklist')
 
-    # edit .gitignore for content repo
-    print('editing .gitignore..')
-
-    need_gitignore = True
-
-    filepath = content_dir + '/../.gitignore'
-
-    if os.path.isfile(filepath):
-        with open (filepath, 'r') as gitignore:
-            lines = gitignore.readlines()
-            for line in lines:
-                if line=='mrblog-content/drafts\n':
-                    need_gitignore = False
-
-    with open (filepath, 'a+') as gitignore:
-        if need_gitignore:
-            gitignore.write('\nmrblog-content/drafts\nmrblog-content/localSummary')
-
     print('done with local setup!')
     print('next run "source ~/.bash_profile" to apply the changes')
