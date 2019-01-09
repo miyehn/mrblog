@@ -24,7 +24,7 @@ while not rec_action:
     a = input('what do you want to do with it?\nreply [e]dit, [r]ename, [d]elete, or [n]othing:\n> ').lower()
     if a=='e' or a=='edit':
         path = f[6:]
-        os.system(os.environ['MRBLOG_EDITOR']+' '+path)
+        os.system('"'+os.environ['MRBLOG_EDITOR']+'" '+path)
         rec_action = True
     elif a=='r' or a=='rename':
         new_name = input('sure. gimme it\'s new name (not the whole path) (without extension):\n> ')
