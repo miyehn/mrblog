@@ -1,11 +1,27 @@
 #!/usr/bin/env bash
 
-filename=$MRBLOG_CONTENT/drafts/$(date +%s).md
+prefix=$MRBLOG_CONTENT/drafts
+defaultname=$(date +%s)
+argname=$1
+filename=""
+
 DD=$(date +%d)
 MM=$(date +%m)
 YYYY=$(date +%Y)
 HH=$(date +%H)
 mm=$(date +%M)
+
+if [ ${#argname} -gt 0 ]
+then
+    filename="$prefix"/"$argname".md
+    if [ -f $filename ]
+    then
+        echo "This name is taken. Try another one."
+        exit
+    fi
+else
+    filename="$prefix"/"$defaultname".md
+fi
 
 touch $filename
 echo "---" >> $filename

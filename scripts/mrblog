@@ -15,7 +15,12 @@ if argc==1:
     print('')
 
 elif sys.argv[1]=='new':
-    os.system(scripts_dir + '/new')
+    if argc > 2:
+        os.system(scripts_dir + '/new ' + sys.argv[2])
+    else: 
+        os.system(scripts_dir + '/new')
+elif sys.argv[1]=='find':
+    os.system(scripts_dir + '/find')
 elif sys.argv[1]=='publish':
     os.system(scripts_dir + '/publish')
 elif sys.argv[1]=='pic':
