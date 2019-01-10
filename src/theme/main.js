@@ -88,9 +88,12 @@ export default class Main extends Component {
 }
 
 function MainColumn () {return (
-    <div className="mainColumn col-xs-12 col-md-8"><Switch>
+    <div className="mainColumn"><Switch>
       {/* Home page */}
       <Route exact path="/" component={()=><PostsManager tag={undefined} page={0} />} />
+      {/* single post */}
+      <Route exact path="/post/:permalink" render={({match})=>
+        <SinglePost permalink={match.params.permalink} />} />
       {/* page num */}
       <Route exact path="/page/:num" render={({match})=>
         <PostsManager tag={undefined} page={match.params.num} />} />
@@ -104,8 +107,19 @@ function MainColumn () {return (
     </Switch></div>
 )}
 
+function SinglePost ({permalink}) {
+  var obj = null;
+  for (var i=0; i<summary.length; i++) {
+    if (summary[i].path==='/'+permalink) {
+      obj = summary[i];
+      obj.content = fetchPost(obj.path);
+    }
+  }
+  return obj ? <PostRenderer postObj={obj} /> : <NotFound />
+}
+
 function SideColumn () {return (
-    <div className="sideColumn col-xs-12 col-md-4">
+    <div className="sideColumn">
       <Avatar />
       <Social />
       <Intro />
@@ -204,10 +218,11 @@ function Date({date}) {return(
 
 function PostRenderer ({postObj}){ return(
   <div>
-    <Date date={postObj.date} />
+    <Link to={'/post'+postObj.path}><Date date={postObj.date} /></Link>
     <div className="post">
       <div>
-        { postObj.title!=='' && <div className="title">{postObj.title}</div> }
+        { postObj.title!=='' && 
+          <Link to={'/post'+postObj.path} className="title">{postObj.title}</Link> }
         <ReactMarkDown className="markdown" escapeHtml={false} source={postObj.content} />
       </div>
       { postObj.tags.map(item=><Tag key={postObj.path+item} text={item} search={item} />) }
@@ -310,7 +325,7 @@ class AmplitudePlayer extends Component {
   render() { 
     if (playlist.length == 0) return null;
     else return (
-    <div className="musicplayer hidden-xs hidden-sm">
+    <div className="musicplayer">
       <span amplitude-song-info="info" amplitude-main-song-info="true"></span><br/>
       <progress 
         onClick={this.progressClickHandler}
@@ -428,3 +443,7 @@ class Footer extends Component {
       <div className="footer">{content}</div>
   )}
 }
+
+function NotFound() { return (
+  <div>Not found...</div>
+)}
