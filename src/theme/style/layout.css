@@ -19,6 +19,7 @@ html{
 	margin-top: var(--space-s);
 	padding-top: var(--space-ms);
 	border-top: 1px solid var(--accent-color);
+	position: relative;
 }
 
 .sideColumn{
@@ -58,7 +59,8 @@ html{
 }
 
 .friends>a{
-	display: block;
+	display: inline-block;
+	margin-right: 1em;
 }
 
 .friends>p{
@@ -73,9 +75,6 @@ html{
 
 	.post{
 		padding-top: calc(var(--space-s) / 2);
-	}
-
-	.mainColumn{
 	}
 
 	.sideColumn{

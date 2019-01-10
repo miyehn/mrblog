@@ -3,6 +3,13 @@
 	position: absolute;
 	width: 299px;
 	bottom: var(--space-l);
+	display: none;
+}
+
+@media(min-width: 992px) {
+	.musicplayer {
+		display: block;
+	}
 }
 
 .amplitude-prev:hover, .amplitude-next:hover, .amplitude-play-pause:hover {

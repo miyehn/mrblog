@@ -24,7 +24,7 @@
 }
 
 @import './normalize.css';
-@import './grid12.css';
 @import './markdown.css';
 @import './musicplayer.css';
 @import './layout.css';
+@import './post_layout.css';
