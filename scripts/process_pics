@@ -12,8 +12,8 @@ for path in paths:
     wh = info.split(' ')
     w = int(wh[0])
     h = int(wh[1])
-    if (w>800 or h>800):
-        cmd='magick "'+path+'" -resize "800x800>" -quality 100 "'+path+'"'
+    if (w>800 or h>640):
+        cmd='magick "'+path+'" -resize "800x640>" -quality 100 "'+path+'"'
         os.system(cmd)
 
 print('resized large images')
