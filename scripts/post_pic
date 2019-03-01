@@ -13,7 +13,7 @@ content_dir = os.environ['MRBLOG_CONTENT']
 domain = os.environ['MRBLOG_DOMAIN']
 
 file = input('gimme an image (drag it to this window):\n')
-img_path = file.replace('\\','')
+img_path = file.replace('\\','').strip()
 os.system('cp "'+img_path+'" '+content_dir+'/pics')
 name = os.path.splitext(os.path.basename(img_path))
 ts = str(int(time.time())) # timestamp
